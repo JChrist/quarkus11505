@@ -8,23 +8,48 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "test")
-public class Model extends PanacheEntityBase {
+public class Model2 {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
+    private long id;
 
-    @Column(name = "something_else") @JsonProperty("something_else")
-    public String somethingElse;
+    @Column(name = "something_else")
+    @JsonProperty("something_else")
+    private String somethingElse;
 
     @Column(name = "time")
-    public Instant time;
+    private Instant time;
 
-    public Model() {
+    public Model2() {
         //for jpa
     }
 
-    public Model(long id, String somethingElse, Instant time) {
+    public Model2(long id, String somethingElse, Instant time) {
         this.id = id;
         this.somethingElse = somethingElse;
+        this.time = time;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getSomethingElse() {
+        return somethingElse;
+    }
+
+    public void setSomethingElse(String somethingElse) {
+        this.somethingElse = somethingElse;
+    }
+
+    public Instant getTime() {
+        return time;
+    }
+
+    public void setTime(Instant time) {
         this.time = time;
     }
 

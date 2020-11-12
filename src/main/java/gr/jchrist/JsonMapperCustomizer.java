@@ -11,7 +11,8 @@ import javax.inject.Singleton;
 public class JsonMapperCustomizer implements ObjectMapperCustomizer {
     @Override
     public void customize(ObjectMapper objectMapper) {
-        objectMapper.findAndRegisterModules()
+        objectMapper
+                .findAndRegisterModules()
                 .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
         ;
